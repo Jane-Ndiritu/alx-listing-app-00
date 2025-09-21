@@ -1,36 +1,64 @@
 import React from "react";
-import Image from "next/image";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-gray-100 border-t border-gray-300 mt-10">
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-gray-900 text-gray-300 py-8 mt-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+  
         <div>
-          <div className="flex items-center gap-2 mb-4">
-          <Image
-              src="/assets/logo.svg"
-              alt="Logo"
-              width={40}
-              height={40}
-              className="cursor-pointer"
-            />
-            <span className="text-lg font-bold text-gray-800">ALXbnb</span>
-          </div>
-          <p className="text-sm text-gray-600">
-            Discover unique stays and experiences across the globe.  
-            Book your next adventure with ease.
+          <h2 className="text-xl font-bold text-white">Airbnb Clone</h2>
+          <p className="mt-2 text-sm">
+            Find your favorite place with the best prices for over 2 million
+            properties worldwide.
           </p>
         </div>
-          <h3 className="text-md font-semibold mb-3">Company</h3>
-          <ul className="space-y-2 text-sm text-gray-600">
-            <li className="hover:text-primary cursor-pointer">About Us</li>
-            <li className="hover:text-primary cursor-pointer">Careers</li>
-            <li className="hover:text-primary cursor-pointer">Blog</li>
-            <li className="hover:text-primary cursor-pointer">Press</li>
+        <div>
+          <h3 className="text-white font-semibold mb-3">Navigation</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link href="/listings">Listings</Link>
+            </li>
           </ul>
         </div>
-
         <div>
-          <h3 className="text-md font-semibold mb-3">Support</h3>
-          
+          <h3 className="text-white font-semibold mb-3">Categories</h3>
+          <ul className="space-y-2 text-sm">
+            <li>Rooms</li>
+            <li>Mansions</li>
+            <li>Countryside</li>
+            <li>Villas</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="text-white font-semibold mb-3">Follow Us</h3>
+          <div className="flex space-x-4">
+            <Link href="https://twitter.com" target="_blank">
+              <span className="hover:text-white">Twitter</span>
+            </Link>
+            <Link href="https://facebook.com" target="_blank">
+              <span className="hover:text-white">Facebook</span>
+            </Link>
+            <Link href="https://instagram.com" target="_blank">
+              <span className="hover:text-white">Instagram</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-gray-700 mt-8 pt-4 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Airbnb Clone. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
