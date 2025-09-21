@@ -33,3 +33,4 @@ const Footer: React.FC = () => {
 
         <div>
           <h3 className="text-md font-semibold mb-3">Support</h3>
+          )};
